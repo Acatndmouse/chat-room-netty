@@ -53,6 +53,12 @@
             <version>1.18.22</version>
         </dependency>
 
+        <!--        hutool帮助类-->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.7.12</version>
+        </dependency>
     </dependencies>
 
 </project>

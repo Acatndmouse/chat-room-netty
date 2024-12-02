@@ -55,6 +55,8 @@ public class WebSocketHandler extends SimpleChannelInboundHandler<TextWebSocketF
                 break;
             case CHAT:
                 ChatHandler.execute(channelHandlerContext, textWebSocketFrame);
+            case JOIN_GROUP:
+                JoinGroupHandler.execute(channelHandlerContext);
             default:
                 channelHandlerContext.channel().writeAndFlush(Result.fail("不支持的code"));
 

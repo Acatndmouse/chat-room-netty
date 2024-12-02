@@ -31,10 +31,11 @@ public class ChatHandler{
                     }
                     //走到这里就能正常私聊了
                     channel.writeAndFlush(Result.success(
-                                    String.format("私聊消息（%s）%s",chat.getMsgId(),chat.getMsg())));
+                                    String.format("私聊消息（%s）:%s",chat.getMsgId(),chat.getMsg())));
                     break;
                 case GROUP:
-
+                    channel.writeAndFlush(Result.success(
+                            String.format("群聊消息（%s）:%s",chat.getMsgId(),chat.getMsg())));
                     break;
                 default:
                     channel.writeAndFlush(Result.fail("不支持的消息类型"));
